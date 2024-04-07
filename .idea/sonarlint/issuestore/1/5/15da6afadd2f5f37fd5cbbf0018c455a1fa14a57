@@ -1,0 +1,21 @@
+
+¦
+java:S1488n"^Immediately return this expression instead of assigning it to the temporary variable "result".(¦™ˆÄıÿÿÿÿ8……Àë1J$4792b787-8d22-4328-8507-360af781943c
+É
+java:S1186^"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Õß‡úÿÿÿÿ8¥……Àë1J$b0d0f133-6b97-4dc3-997f-26c6fd5da79b
+}
+java:S1118
+":Add a private constructor to hide the implicit public one.(å¤³•8§……Àë1J$3736f73e-43fd-4377-a6be-d905ee09cd0d
+Œ
+java:S2147/"DCombine this catch with the one at line 44, which has the same body.(©œ¡ÿÿÿÿÿ8©……Àë1J$df2d7857-e066-49ed-8f10-3c42e01171c4
+r	java:S106-"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8«……Àë1J$f46fe8c8-e6fa-4cc7-9261-dc6555dad85b
+r	java:S1060"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8¬……Àë1J$d35e177d-c2b5-4173-9985-a37f556e8a6e
+™
+java:S3457T"Q%n should be used in place of \n to produce the platform-specific line separator.(±¥øşıÿÿÿÿ8Áä†Àë1J$533dfc1c-c1c9-4d47-a032-61147e80d4e4
+r	java:S106T"+Replace this use of System.out by a logger.(±¥øşıÿÿÿÿ8®……Àë1J$0d9996f3-beca-4abd-a4f9-2fab25ccc75b
+‹
+java:S5361X"HReplace this call to "replaceAll()" by a call to the "replace()" method.(°ë–ó8¯……Àë1J$b4e2d5db-4af7-4337-99f3-acc79cef4996
+p
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8è¾†Àë1J$76650c8b-9afe-4137-be8a-bb1b92eb7f89
+r
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8è¾†Àë1J$232a3255-6e11-46ee-937b-d9a6dd7d3637
