@@ -1,7 +1,5 @@
 package ru.javarush.vasilev.cryptoanalizer.controller;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class FileManager {
     private Validator validator;
 
@@ -10,7 +8,7 @@ public class FileManager {
     }
 
     public String readFile(String filePath){
-        if(StringUtils.isEmpty(filePath))
+//        if(StringUtils.isEmpty(filePath))
         return null;
     }
     public void writeFile(String filePath, String content){
