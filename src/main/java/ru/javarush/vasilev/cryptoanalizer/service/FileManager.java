@@ -1,4 +1,4 @@
-package ru.javarush.vasilev.cryptoanalizer.controller;
+package ru.javarush.vasilev.cryptoanalizer.service;
 
 public class FileManager {
     private Validator validator;
