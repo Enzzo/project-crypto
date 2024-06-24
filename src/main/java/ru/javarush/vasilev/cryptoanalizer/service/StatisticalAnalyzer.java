@@ -1,4 +1,4 @@
-package ru.javarush.vasilev.cryptoanalizer.controller;
+package ru.javarush.vasilev.cryptoanalizer.service;
 
 public class StatisticalAnalyzer {
     public int findMostLikelyShift(String encryptedText, char[] alphabet, String representativeText){

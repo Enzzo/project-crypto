@@ -1,6 +1,6 @@
-package ru.javarush.vasilev.cryptoanalizer.controller;
+package ru.javarush.vasilev.cryptoanalizer.service;
 
-public class Brutforce {
+public class Bruteforce {
     public String decryptByBrutforce(String encryptedText, char[] alphabet){
         return null;
     }

@@ -1,11 +1,15 @@
-package ru.javarush.vasilev.cryptoanalizer.controller;
+package ru.javarush.vasilev.cryptoanalizer.service;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class Cypher {
+    private final AlphabetService alphabet = new AlphabetService();
+    private final Bruteforce bf = new Bruteforce();
+    private final StatisticalAnalyzer st = new StatisticalAnalyzer();
 
     /**
      *
@@ -13,29 +17,21 @@ public class Cypher {
      * @param dstFile путь к файлу, содержащему результат
      * @param key величина, на которую сдвигается исходный текст
      */
-    private static void crypt(String srcFile, String dstFile, int key){
-
-        Path path = Paths.get(srcFile);
-        try{
-            byte[] bytes = Files.readAllBytes(path);
-            FileWriter os = new FileWriter(dstFile);
-            int len = 0;
-//            while((len = reader.read(buffer)) > 0){
-//                for(int i = 0; i < len; ++i){
-//                    int idx = Arrays.binarySearch(ALPHABET, buffer[i]);
-//                    if(0 <= idx) {
-//                        int offs = roll(idx, key, ALPHABET.length);
-//                        buffer[i] = ALPHABET[offs];
-//                    }
-//                }
-//                os.write(buffer, 0, len);
-//            }
+    public String crypt(String src, int key){
+        String crypted = new String();
+        for(int i = 0; i < src.length(); ++i){
+            char ch = src.charAt(i);
+            int idx = Arrays.binarySearch(alphabet.getAlphabet(), ch);
+            if(0 <= idx){
+                ch = alphabet.getChar(idx + key);
+            }
+            crypted += ch;
         }
-        catch(IOException ignore){}
+        return crypted;
     }
 
-    public static void encrypt(String srcFile, String dstFile, int key){
-        crypt(srcFile, dstFile, key);
+    public String encrypt(String src, int key){
+        return crypt(src, key);
     }
 
     //  +---------------------------------------------------------------+
@@ -46,8 +42,8 @@ public class Cypher {
     //  |   результат                                                   |
     //  |   key - величина, на которую сдвигается исходный текст        |
     //  +---------------------------------------------------------------+
-    public static void decrypt(String srcFile, String dstFile, int key){
-        crypt(srcFile, dstFile, -key);
+    public String decrypt(String src, int key){
+        return crypt(src, -key);
     }
 
     //  +---------------------------------------------------------------+
@@ -63,7 +59,7 @@ public class Cypher {
     //  |   без результата                                              |
     //  |   В директории назначения создаются файлы-результаты брута    |
     //  +---------------------------------------------------------------+
-    public static void brutForce(String srcFile, String dstDir){
+    public static void bruteForce(String srcFile, String dstDir){
         try {
             Path dstPath = Paths.get(dstDir);
             if (!Files.exists(dstPath)) {

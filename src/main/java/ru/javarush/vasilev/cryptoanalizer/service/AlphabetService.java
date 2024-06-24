@@ -19,8 +19,12 @@ public class AlphabetService {
      * @return Character
      */
     public Character getChar(int index){
-        if(index != 0) index %= index;
+        if(index != 0) index %= size();
         int idx = (index < 0)?size() + index : index;
-        return AlphabetRepository.getInstance().getAlphabet()[idx];
+        return getAlphabet()[idx];
+    }
+
+    public char[] getAlphabet(){
+        return AlphabetRepository.getInstance().getAlphabet();
     }
 }
