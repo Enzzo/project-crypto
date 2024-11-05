@@ -12,9 +12,9 @@ public class CypherController {
     private final FileManager fm = new FileManager();
     private static Scanner cnsl;
 
-    private String src = "D:/test/2.txt";
-    private String dst = "D:/test/3.txt";
-    private Integer key = 1;
+//    private String src = "D:/test/2.txt";
+//    private String dst = "D:/test/3.txt";
+//    private Integer key = 1;
 
 //    private String rootDirectory = new String();
 
@@ -22,27 +22,25 @@ public class CypherController {
         cnsl = new Scanner(System.in);
     }
 
-    public CypherController(){
-        System.out.println("Enter a rootDirectory directory");
-//        rootDirectory = cnsl.nextLine();
-    }
+    public CypherController(){}
 
     public void encrypt(){
         System.out.println("enter path of src then dst file");
-//        String src = cnsl.nextLine();
-//        String dst = cnsl.nextLine();
-//        Integer key = cnsl.nextInt();
-
-        fm.writeFile(dst, cypher.encrypt(fm.readFile(src), key));
+        String src = cnsl.nextLine();
+        String dst = cnsl.nextLine();
+        Integer key = cnsl.nextInt();
+        String sourceData = fm.readFile(src).orElseThrow();
+        fm.writeFile(dst, cypher.encrypt(sourceData, key));
     }
 
     public void decrypt(){
         System.out.println("enter path of src then dst file");
-//        String src = cnsl.nextLine();
-//        String dst = cnsl.nextLine();
-//        Integer key = cnsl.nextInt();
+        String src = cnsl.nextLine();
+        String dst = cnsl.nextLine();
+        Integer key = cnsl.nextInt();
 
-        fm.writeFile(dst, cypher.decrypt(fm.readFile(src), key));
+        String sourceData = fm.readFile(src).orElseThrow();
+        fm.writeFile(dst, cypher.decrypt(sourceData, key));
     }
 
     public void bruteforce(){

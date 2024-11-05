@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 public class FileManager {
 
     public FileManager() {}
 
-    public String readFile(String filePath){
+    public Optional<String> readFile(String filePath) {
         if(Validator.isFileExists(filePath)){
             Path src = Paths.get(filePath);
             try {
@@ -18,7 +19,7 @@ public class FileManager {
                 for(String line : Files.readAllLines(src)){
                     result.append(line).append('\n');
                 }
-                return result.toString();
+                return Optional.of(result.toString());
             }catch(IOException e){
                 System.out.println("can't read file");
             }
